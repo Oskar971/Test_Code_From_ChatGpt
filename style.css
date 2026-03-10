@@ -1,86 +1,46 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  scroll-behavior: smooth; /* gir animert scroll */
 }
 
+/* Navbar */
 .navbar {
+  position: fixed; /* holder navbar øverst */
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   background-color: #333;
   color: white;
-  position: relative;
+  z-index: 1000;
 }
 
-.logo {
-  font-size: 1.5rem;
+/* Logo */
+.navbar .logo {
   font-weight: bold;
+  font-size: 1.5rem;
 }
 
-/* Meny-lenker */
-.nav-links {
+/* Lenker */
+.navbar .nav-links {
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-links li a {
+.navbar .nav-links a {
   color: white;
   text-decoration: none;
-  font-weight: 500;
 }
 
-/* Hamburger */
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-/* Mobilmeny */
-#menu-toggle {
-  display: none;
-}
-
-/* Media Queries for mobil */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 250px;
-    background-color: #444;
-    padding-top: 5rem;
-    transition: transform 0.3s ease-in-out;
-    transform: translateX(100%);
-  }
-
-  .nav-links li {
-    margin: 1.5rem 0;
-    text-align: center;
-  }
-
-  #menu-toggle:checked + .hamburger + .nav-links {
-    transform: translateX(0);
-  }
-
-  .hamburger {
-    display: block;
-  }
-}
-
-/* Seksjoner for testing */
+/* Seksjoner */
 section {
-  height: 100vh;
-  padding: 2rem;
-}
-section:nth-child(odd) {
-  background-color: #f4f4f4;
-}
-section:nth-child(even) {
-  background-color: #ddd;
+  padding: 100px 20px;
+  min-height: 100vh;
 }
